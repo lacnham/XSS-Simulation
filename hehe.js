@@ -1,10 +1,10 @@
 const btn = document.getElementById("button");
 const mail_value = document.getElementById("mail").value ;
-btn.addEventListener("click", e => postemail())
+btn.addEventListener("click", e => postemail(mail_value))
 
-async function postemail(name){
+async function postemail(mail_value){
     const mail = document.getElementById("mail");
-    const res = await fetch("http://127.0.0.1:5500/arrayEmail", {"method": "post", "headers": {"content-type": "application/json"}, "body": JSON.stringify({"name": name   }) });
+    const res = await fetch(" https://lacnham.github.io/XSS-Simulation/arrayEmail", {"method": "post", "headers": {"content-type": "application/json"}, "body": JSON.stringify({"name": mail_value   }) });
     const a = await res.json();
     alert(JSON.stringify(a))
 }
