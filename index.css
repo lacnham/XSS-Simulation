@@ -1,0 +1,12 @@
+.container {
+    width: 80%;
+    margin: 6rem auto;
+    background-color: antiquewhite;
+    padding: 2rem;
+}
+.mail-input{
+    width: 80%;
+    margin: auto;
+    background-color: rgb(212, 212, 212);
+    padding: 2rem;
+}
