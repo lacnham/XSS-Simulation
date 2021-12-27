@@ -1,0 +1,19 @@
+1. GET COOKIE
+	a. redirect: 
+<script>if(window.location.href=="http://localhost:3000/home"){window.setTimeout((()=>{window.location.reload()}),600000000);}else {window.location.href="http://localhost:3000/home";}</script>
+	
+	b. 
+<script>alert(document.cookie);</script>
+_____________________________________________________________
+
+2. PREVENT XSS
+	1st way:
+	a. res.setHeader("Content-Security-Policy", "script-src" 'none'")
+	b. res.setHeader("Content-Security-Policy", "script-src http://localhost:3000")
+	(ALREADY IN app.js)
+
+	2nd way: 
+	- In some cases, 1st way doesn't work
+	- You can block the "<script>" tag in the HTML, but there are still other ways to inject XSS: "https://youtu.be/EoaDgUgS6QA?t=506"
+	- In some cases, you cannot block HTML since apps like Gmail uses HTML to send mails. Same goes for rich text webs/apps.
+	=> Use "DOM Purifiers": an amazing library for sanitizes JS and spit out only the clean HTML.
